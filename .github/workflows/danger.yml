@@ -20,7 +20,7 @@ jobs:
           ruby-version: '2.6'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Generate cache key
-          run: /bin/bash scripts/checksum.sh checksum.txt
+        run: /bin/bash scripts/checksum.sh checksum.txt
       - name: Cache gradle dependencies
         uses: actions/cache@v2
         continue-on-error: true
