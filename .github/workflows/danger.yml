@@ -25,7 +25,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6'
-          bundler-cache: true
 
       # Runs Danger workflow
       - name: Run Danger
