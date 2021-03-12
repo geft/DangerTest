@@ -21,15 +21,15 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Generate cache key
           run: /bin/bash scripts/checksum.sh checksum.txt
-            - name: Cache gradle dependencies
-              uses: actions/cache@v2
-              continue-on-error: true
-              with:
-                path: |
-                  ~/.gradle/caches/modules-*
-                  ~/.gradle/caches/jars-*
-                  ~/.gradle/caches/build-cache-*
-                key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
+      - name: Cache gradle dependencies
+        uses: actions/cache@v2
+        continue-on-error: true
+        with:
+          path: |
+            ~/.gradle/caches/modules-*
+            ~/.gradle/caches/jars-*
+            ~/.gradle/caches/build-cache-*
+          key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
 
       # Runs Danger workflow
       - name: Run Danger
