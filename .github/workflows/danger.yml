@@ -16,20 +16,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.6'
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Generate cache key
-        run: /bin/bash scripts/checksum.sh checksum.txt
-      - name: Cache gradle dependencies
-        uses: actions/cache@v2
-        continue-on-error: true
-        with:
-          path: |
-            ~/.gradle/caches/modules-*
-            ~/.gradle/caches/jars-*
-            ~/.gradle/caches/build-cache-*
-          key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
+          with:
+            ruby-version: 2.6 # Not needed with a .ruby-version file
+            bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       # Runs Danger workflow
       - name: Run Danger
