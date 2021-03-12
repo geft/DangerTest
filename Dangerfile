@@ -22,4 +22,4 @@ jacoco.minimum_class_coverage_map = { # optional (default is empty)
 }
 jacoco.minimum_class_coverage_percentage = 75 # default 0
 jacoco.files_extension = [".java"] # default [".kt", ".java"]
-jacoco.report("reports/jacoco/debug/jacoco.xml", "http://jacoco-html-reports/")
+jacoco.report("app/build/reports/jacoco/debug/jacoco.xml", "http://jacoco-html-reports/")
