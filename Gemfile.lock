@@ -47,6 +47,8 @@ GEM
     no_proxy_fix (0.1.2)
     nokogiri (1.11.2-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.11.2-x86_64-linux)
+      racc (~> 1.4)
     nokogiri-happymapper (0.8.1)
       nokogiri (~> 1.5)
     octokit (4.20.0)
@@ -66,7 +68,7 @@ GEM
     unicode-display_width (1.7.0)
 
 PLATFORMS
-  x86_64-darwin-19
+  ruby
 
 DEPENDENCIES
   danger
