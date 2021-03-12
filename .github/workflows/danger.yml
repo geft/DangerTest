@@ -22,4 +22,6 @@ jobs:
 
       # Runs Danger workflow
       - name: Run Danger
+        env:
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
         run: bundle exec danger
