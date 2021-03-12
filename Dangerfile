@@ -17,7 +17,7 @@ jacoco.minimum_project_coverage_percentage = 0 # default 0
 
 # package level coverage
 jacoco.minimum_package_coverage_map = { # optional (default is empty)
-  'com/' => 60
+  'com/' => 75
 }
 
 # coverage for individual classes
