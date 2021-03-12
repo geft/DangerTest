@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  Danger:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -26,7 +26,17 @@ jobs:
         with:
           ruby-version: '2.6'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - run: bundle exec rake
+      - name: Generate cache key
+          run: /bin/bash scripts/checksum.sh checksum.txt
+            - name: Cache gradle dependencies
+              uses: actions/cache@v2
+              continue-on-error: true
+              with:
+                path: |
+                  ~/.gradle/caches/modules-*
+                  ~/.gradle/caches/jars-*
+                  ~/.gradle/caches/build-cache-*
+                key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
 
       # Runs Danger workflow
       - name: Run Danger
