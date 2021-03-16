@@ -1,6 +1,6 @@
 # package level coverage
 jacoco.minimum_package_coverage_map = { # optional (default is empty)
-  'com/example/' => 75
+  'com/example/' => 100
 }
 
 # only used for string output for minimum class coverage
