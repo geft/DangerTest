@@ -21,8 +21,11 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       # Runs Jacoco
-      - name: Run Jacoco
+      - name: Run Jacoco app
         run: ./gradlew jacocoTestReportDebug
+
+      - name: Run Jacoco danger
+        run: ./gradlew danger:jacocoTestReportDebug
 
       # Runs Danger workflow
       - name: Run Danger
