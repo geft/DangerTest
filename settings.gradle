@@ -1,2 +1,3 @@
 rootProject.name = "Danger Test"
 include ':app'
+include ':danger'
